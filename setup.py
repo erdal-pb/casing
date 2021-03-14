@@ -1,11 +1,8 @@
 from distutils.core import setup
 
-from casing._version import __version__
-
-
 setup(
     name='casing',
-    version=__version__,
+    version="0.1.2",
     author='Vincent Bénet',
     author_email='vincent.benet@outlook.fr',
     url='https://github.com/vincentBenet/casing',
@@ -20,7 +17,8 @@ setup(
         'Intended Audience :: Developers',
         'Intended Audience :: Science/Research',
     ],
-    packages=['casing'],
-    scripts=['scripts/utm-converter'],
-    long_description=open('README.txt').read(),
+    packages=["casing"],
+    include_package_data=True,
+    long_description=open('README.md').read(),
+    # scripts=["casing.py"]
 )
