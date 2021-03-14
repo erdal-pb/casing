@@ -8,7 +8,7 @@ if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
 set SOURCEDIR=source
-set BUILDDIR=../../casing_gh_pages/
+set BUILDDIR=../../gh-pages/
 
 if "%1" == "" goto help
 
