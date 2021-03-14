@@ -9,6 +9,4 @@ install:
 - pip install sphinx_rtd_theme
 script:
 - coverage run -m unittest discover
-- cd docs
-- sphinx-build -b html -q -W -d build/doctrees source gh-pages
 after_success: coveralls
