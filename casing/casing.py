@@ -112,9 +112,5 @@ def reversedcase(var):  # some Variable
     result[0] = result[0].lower()
     return "".join(result)
 
-if __name__ == "__main__":
-    var_list = ["some", "incredible", "variable"]
-    for fct in getcases():
-        var = globals()[fct](var_list)
-        function = "{0}case".format(detect(var))
-        print("_")
+# if __name__ == "__main__":
+    

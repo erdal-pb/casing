@@ -30,11 +30,27 @@ class Test_casing(unittest.TestCase):
             function = "{0}case".format(casing.detect(var))
             self.assertTrue(function == fct)
     
-    def test_invalid(self):
+    def test_transform_list(self):
         import casing
-        
+        casing.transform(self.var_list)
+    
+    def test_invalid_transform(self):
+        import casing
         with self.assertRaises(Exception):
             casing.transform(self.var_list, "unknow")
     
-if __name__ == "__main__":
-    unittest.main()
+    def test_invalid_transform_type(self):
+        import casing        
+        with self.assertRaises(Exception):
+            casing.transform(0, "unknow")
+        
+    
+    def test_invalid_detect(self):
+        import casing
+        self.assertTrue(casing.detect("some-Incredible_variable") == "unknow")
+        
+    
+    
+    
+# if __name__ == "__main__":
+    # unittest.main()
