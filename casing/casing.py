@@ -9,12 +9,14 @@ def getcases():
 
 def detect(var):
     var_list = analyze(var)
-    type = "unknow"
     for fct in getcases():
-        type = fct[:-len("case")]
-        if transform(var, type) == var:
+        case = fct[:-len("case")]
+        result = transform(var, case)   
+        if result == var:
             break
-    return type
+    else:
+        case = "unknow"
+    return case
 
 def analyze(var):
     var_list = []
@@ -34,16 +36,18 @@ def analyze(var):
     var_list.append(buffer)
     return list(filter(len, var_list))
 
-def transform(var, type="snake"):
-    for fct in dir(__import__(inspect.getmodulename(__file__))):
-        if "{0}case".format(type) == fct:
+def transform(var, case="snake"):
+    for fct in getcases():
+        if "{0}case".format(case) == fct:
             function = globals()[fct]
-            if type(var) == type([]):
+            if type(var) is str:
+                return function(analyze(var))
+            elif type(var) is list:
                 return function(var)
             else:
-                return function(analyze(var))
+                Exception("Invalid type input")
     else:
-        raise Exception("Function '{0}' don't exists".format(function))
+        raise Exception("Case '{0}' don't exists".format(case))
     
 def snakecase(var):  # some_variable
     return "_".join(var)
@@ -107,3 +111,10 @@ def reversedcase(var):  # some Variable
     result = list(prettycase(var))
     result[0] = result[0].lower()
     return "".join(result)
+
+if __name__ == "__main__":
+    var_list = ["some", "incredible", "variable"]
+    for fct in getcases():
+        var = globals()[fct](var_list)
+        function = "{0}case".format(detect(var))
+        print("_")

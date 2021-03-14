@@ -24,9 +24,11 @@ class Test_casing(unittest.TestCase):
     def test_detect(self):
         import casing
         for fct in casing.getcases():
+            if "attached" in fct:
+                continue
             var = getattr(casing, fct)(self.var_list) 
             function = "{0}case".format(casing.detect(var))
-            self.assertTrue(function == fct or "attached" in fct)
+            self.assertTrue(function == fct)
     
     def test_invalid(self):
         import casing
@@ -34,5 +36,5 @@ class Test_casing(unittest.TestCase):
         with self.assertRaises(Exception):
             casing.transform(self.var_list, "unknow")
     
-# if __name__ == "__main__":
-    # unittest.main()
+if __name__ == "__main__":
+    unittest.main()
