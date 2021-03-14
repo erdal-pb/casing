@@ -37,7 +37,11 @@ def analyze(var):
 def transform(var, type="snake"):
     for fct in dir(__import__(inspect.getmodulename(__file__))):
         if "{0}case".format(type) == fct:
-            return globals()[fct](analyze(var))
+            function = globals()[fct]
+            if type(var) == type([]):
+                return function(var)
+            else:
+                return function(analyze(var))
     else:
         raise Exception("Function '{0}' don't exists".format(function))
     
@@ -103,6 +107,3 @@ def reversedcase(var):  # some Variable
     result = list(prettycase(var))
     result[0] = result[0].lower()
     return "".join(result)
-
-if __name__ == "__main__":
-    print(list(getcases()))
