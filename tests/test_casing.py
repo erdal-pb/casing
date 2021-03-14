@@ -42,7 +42,7 @@ class Test_casing(unittest.TestCase):
     def test_invalid_transform_type(self):
         import casing        
         with self.assertRaises(Exception):
-            casing.transform(0, "unknow")
+            casing.transform(0)
         
     
     def test_invalid_detect(self):
