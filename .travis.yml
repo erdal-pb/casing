@@ -7,15 +7,13 @@ script:
 - coverage run -m unittest discover
 after_success: coveralls
 
-deploy-doc:
+deploy:
     provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
     keep_history: true
     on:
         branch: main
-    
-deploy-package:
     provider: pypi
     username: "__token__"
     password: $PYPI_TOKEN
