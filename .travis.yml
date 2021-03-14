@@ -8,11 +8,3 @@ install:
 script:
 - coverage run -m unittest discover
 after_success: coveralls
-deploy:
-  provider: pypi
-  user: Vincentimetr
-  password:
-    secure: z7lRtRO7W/jRGbUitkoVWkPiYNE4hlnYEhwS0MAIiTB9purbGFdEnM/pzg/4dt40FanzHDb+l+Znd5C82URkOfDtxhYydhaU1lj2Ul7pkJ6oukJmnQ2KmI9UZW2MpHrUKyfPS8ueN3MQ/+ZqEUtcJpuSTg/hDTnVz5Ed0SLCFePC1FLUh0GMLABoAFESFI4RzMeHTsI0vz8sXRAE3+f9dJqDFzNZacW/qzxq0kETqqLkVHVicV4CB1M90uqnsU3EzBHn5rAVIWl1P+R3jiRfIGlUe7M3TsFG4Vg1BUNCyrEkjOFWDqlca1oFSfHlW72QBedWFzGsP+6KAb041M9ADj7Ju4yXr0Fbr8wPeGONYPivgHDYPymq2zxjWOAdrASr10QwuJnrVo2faxA1H3xNrJu4o2CZrCThsO0PdJRZfBeDUmf3XUwJ24Asgo5O32Hq5uRFzQqcj0PhQioHBkc4ebDhpZlW5RNR2MlDeiAv7Gv/UiDhG6mja5fhBf7kxdrZ8Yma9N/NH1Ch4DI72CjeWyD+e2ZBK45JEWa72iMP5fubPwdrdJtRCs9ivweCSLuD1eIv3slp316o5rOYkF6ZgkX1BzY+r3iu2K+UzvW5I+zN7AoSpjLtV5MKQn4FNFGH+4u/g3sAlfPF7Qe2EesDixbBp+48TeOgVfdgLvFTifw=
-  on:
-    tags: true
-    branch: master
