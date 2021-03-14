@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='casing',
-    version="0.1.2",
+    version="0.0.1",
     author='Vincent Bénet',
     author_email='vincent.benet@outlook.fr',
     url='https://github.com/vincentBenet/casing',
