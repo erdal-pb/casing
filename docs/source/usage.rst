@@ -1,2 +1,5 @@
 Usage
 =======
+
+.. automodule:: casing
+    :members:

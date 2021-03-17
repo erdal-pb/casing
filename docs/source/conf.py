@@ -1,11 +1,15 @@
+import os
+import sys
 import datetime
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "..", "casing"))
+import casing
 
 project = 'casing'
 copyright = '2021, Vincent Bénet'
 author = 'Vincent Bénet'
 release = 'V 1.0'
 version = release
-extensions = ['sphinx.ext.autosectionlabel']
+extensions = ['sphinx.ext.autosectionlabel', 'sphinx.ext.autodoc']
 templates_path = ['_templates']
 exclude_patterns = []
 html_theme = 'sphinx_rtd_theme'
@@ -32,3 +36,10 @@ rst_epilog = """
     :align: center
     :width: 100%
 """
+autodoc_default_options = {
+    'members': 'var1, var2',
+    'member-order': 'bysource',
+    'special-members': '__init__',
+    'undoc-members': True,
+    'exclude-members': '__weakref__'
+}
