@@ -15,8 +15,8 @@ jobs:
       uses: ammaraskar/sphinx-action@0.4
       with:
         # The folder containing your sphinx docs.
-        docs-folder: docs/
+        docs-folder: docs/source
         # The command used to build your documentation.
-        build-command: make html
+        build-command: docs/make html
         # Run before the build command, you can use this to install system level dependencies, for example with "apt-get update -y && apt-get install -y perl"
         pre-build-command: apt-get update -y && apt-get install -y perl
