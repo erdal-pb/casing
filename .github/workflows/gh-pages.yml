@@ -15,7 +15,7 @@ jobs:
       uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "/docs/"
-        build-command: "ls && make html"
+        build-command: "sphinx-build source build"
      
     - name: artifact
       uses: actions/upload-artifact@v1
