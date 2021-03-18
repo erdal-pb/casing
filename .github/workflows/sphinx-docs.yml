@@ -1,0 +1,16 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sphinx-docs:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: sphinx-docs
+      run: |
+        cd docs
+        pip install -r requirements.txt
+        sphinx-build -b html .
