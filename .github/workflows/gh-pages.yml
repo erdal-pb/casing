@@ -13,6 +13,8 @@ jobs:
       # You may pin to the exact commit or the version.
       # uses: ammaraskar/sphinx-action@8b4f60114d7fd1faeba1a712269168508d4750d2
       uses: ammaraskar/sphinx-action@master
+      with:
+        docs-folder: ./docs/
      
     - name: artifact
       uses: actions/upload-artifact@v1
