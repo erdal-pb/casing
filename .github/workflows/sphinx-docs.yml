@@ -11,6 +11,7 @@ jobs:
     steps:
     - name: sphinx-docs
       run: |
+        ls
         cd docs
         pip install -r requirements.txt
         sphinx-build -b html .
