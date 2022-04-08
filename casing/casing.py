@@ -1,8 +1,6 @@
 import inspect
 import sys
 
-separators = "-_ "
-alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 def getcases():
     """
@@ -51,7 +49,7 @@ def detect(var):
     return case
 
 
-def analyze(var):
+def analyze(var, separators="-_ ", alphabet="abcdefghijklmnopqrstuvwxyz"):
     """
     Split the input `var` in each elements.
     
