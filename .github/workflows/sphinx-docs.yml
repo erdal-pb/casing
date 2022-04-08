@@ -1,17 +1,5 @@
-name: github pages
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  sphinx-docs:
-    runs-on: ubuntu-18.04
-    steps:
-    - name: sphinx-docs
-      run: |
-        ls
-        cd docs
-        pip install -r requirements.txt
-        sphinx-build -b html .
+- name: Sphinx Build
+  uses: ammaraskar/sphinx-action@0.4
+  with:
+    docs-folder: docs/
+    build-command: html
