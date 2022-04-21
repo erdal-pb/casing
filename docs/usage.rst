@@ -2,4 +2,7 @@ Usage
 =======
 
 .. automodule:: casing
-    :members:
+   :imported-members:
+   :members:
+   :undoc-members:
+   :show-inheritance:
